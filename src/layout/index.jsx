@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Sidebar from "@/components/layout/sidebar";
+import Navbar from "@/components/layout/navbar";
 
 const userData = {
   _id: "1",
@@ -36,7 +37,11 @@ function Layout() {
         setIsSidebarOpen={setIsSidebarOpen}
       />
       <Box flexGrow={1}>
-        Navbar here
+        <Navbar
+          user={userData}
+          isSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+        />
         <Outlet />
       </Box>
     </Box>
