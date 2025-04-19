@@ -6,16 +6,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import globalReducer from "@/store";
 import App from "@/App";
-// import { api } from "@/store/api";
+import { api } from "@/store/api";
 import "./index.css";
 
 const store = configureStore({
   reducer: {
     global: globalReducer,
-    // [api.reducerPath]: api.reducer,
+    [api.reducerPath]: api.reducer,
   },
-  middleware: (getDefault) => getDefault(),
-  // .concat(api.middleware),
+  middleware: (getDefault) => getDefault().concat(api.middleware),
 });
 
 setupListeners(store.dispatch);
