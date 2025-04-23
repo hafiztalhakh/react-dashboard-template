@@ -58,7 +58,6 @@ const Dashboard = () => {
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
         <Box>
           <Button
             sx={{
@@ -74,7 +73,6 @@ const Dashboard = () => {
           </Button>
         </Box>
       </FlexBetween>
-
       <Box
         mt="20px"
         display="grid"
