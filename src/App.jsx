@@ -1,8 +1,8 @@
+import { useMemo } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "@/theme";
 import Layout from "@/layout";
 import Dashboard from "@/screens/dashboard";
@@ -11,6 +11,8 @@ import Customers from "@/screens/customers";
 import Transactions from "@/screens/transactions";
 import Geography from "@/screens/geography";
 import Overview from "@/screens/overview";
+import Daily from "@/screens/daily";
+import Monthly from "@/screens/monthly";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -28,6 +30,8 @@ function App() {
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/geography" element={<Geography />} />
             <Route path="/overview" element={<Overview />} />
+            <Route path="/daily" element={<Daily />} />
+            <Route path="/monthly" element={<Monthly />} />
           </Route>
         </Routes>
       </ThemeProvider>
